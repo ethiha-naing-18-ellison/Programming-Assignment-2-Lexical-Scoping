@@ -59,39 +59,29 @@ cacheSolve <- function(x, ...) {
     
     m  # Return the inverse
 }
+
 Example Execution
 The following example demonstrates caching behavior:
 
-r
-Copy
-Edit
 # Create a 3x3 diagonal matrix
 a <- diag(5, 3)
 a
 Matrix a:
+#      [,1] [,2] [,3]
+# [1,]    5    0    0
+# [2,]    0    5    0
+# [3,]    0    0    5
 
-css
-Copy
-Edit
-     [,1] [,2] [,3]
-[1,]    5    0    0
-[2,]    0    5    0
-[3,]    0    0    5
 Step 1: Create Cached Matrix
-r
-Copy
-Edit
+
 CachedMatrix <- makeCacheMatrix(a)
+
 Step 2: Compute and Cache the Inverse
-r
-Copy
-Edit
+
 cacheSolve(CachedMatrix)
 Inverse of a:
 
-css
-Copy
-Edit
+
      [,1] [,2] [,3]
 [1,]  0.2  0.0  0.0
 [2,]  0.0  0.2  0.0
