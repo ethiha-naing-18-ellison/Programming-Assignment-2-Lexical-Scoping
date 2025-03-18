@@ -80,85 +80,67 @@ Step 2: Compute and Cache the Inverse
 
 cacheSolve(CachedMatrix)
 Inverse of a:
+#      [,1] [,2] [,3]
+# [1,]  0.2  0.0  0.0
+# [2,]  0.0  0.2  0.0
+# [3,]  0.0  0.0  0.2
 
-
-     [,1] [,2] [,3]
-[1,]  0.2  0.0  0.0
-[2,]  0.0  0.2  0.0
-[3,]  0.0  0.0  0.2
 Step 3: Retrieve Cached Inverse
-r
-Copy
-Edit
+
 cacheSolve(CachedMatrix)  # Should return cached inverse
 Output:
-
-css
-Copy
-Edit
 getting cached data
-     [,1] [,2] [,3]
-[1,]  0.2  0.0  0.0
-[2,]  0.0  0.2  0.0
-[3,]  0.0  0.0  0.2
+
+#      [,1] [,2] [,3]
+# [1,]  0.2  0.0  0.0
+# [2,]  0.0  0.2  0.0
+# [3,]  0.0  0.0  0.2
+
+
 Example 2: 6x6 Matrix
-r
-Copy
-Edit
+
 b <- diag(2, 6)
 b
 Matrix b:
 
-css
-Copy
-Edit
-     [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    2    0    0    0    0    0
-[2,]    0    2    0    0    0    0
-[3,]    0    0    2    0    0    0
-[4,]    0    0    0    2    0    0
-[5,]    0    0    0    0    2    0
-[6,]    0    0    0    0    0    2
+#      [,1] [,2] [,3] [,4] [,5] [,6]
+# [1,]    2    0    0    0    0    0
+# [2,]    0    2    0    0    0    0
+# [3,]    0    0    2    0    0    0
+# [4,]    0    0    0    2    0    0
+# [5,]    0    0    0    0    2    0
+# [6,]    0    0    0    0    0    2
+
 Step 1: Create Cached Matrix
-r
-Copy
-Edit
+
 CachedMatrix <- makeCacheMatrix(b)
 Step 2: Compute and Cache the Inverse
-r
-Copy
-Edit
+
 cacheSolve(CachedMatrix)
 Inverse of b:
 
-css
-Copy
-Edit
-     [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]  0.5  0.0  0.0  0.0  0.0  0.0
-[2,]  0.0  0.5  0.0  0.0  0.0  0.0
-[3,]  0.0  0.0  0.5  0.0  0.0  0.0
-[4,]  0.0  0.0  0.0  0.5  0.0  0.0
-[5,]  0.0  0.0  0.0  0.0  0.5  0.0
-[6,]  0.0  0.0  0.0  0.0  0.0  0.5
+#      [,1] [,2] [,3] [,4] [,5] [,6]
+# [1,]  0.5  0.0  0.0  0.0  0.0  0.0
+# [2,]  0.0  0.5  0.0  0.0  0.0  0.0
+# [3,]  0.0  0.0  0.5  0.0  0.0  0.0
+# [4,]  0.0  0.0  0.0  0.5  0.0  0.0
+# [5,]  0.0  0.0  0.0  0.0  0.5  0.0
+# [6,]  0.0  0.0  0.0  0.0  0.0  0.5
+
 Step 3: Retrieve Cached Inverse
-r
-Copy
-Edit
+
 cacheSolve(CachedMatrix)  # Should return cached inverse
 Output:
 
-css
-Copy
-Edit
 getting cached data
-     [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]  0.5  0.0  0.0  0.0  0.0  0.0
-[2,]  0.0  0.5  0.0  0.0  0.0  0.0
-[3,]  0.0  0.0  0.5  0.0  0.0  0.0
-[4,]  0.0  0.0  0.0  0.5  0.0  0.0
-[5,]  0.0  0.0  0.0  0.0  0.5  0.0
-[6,]  0.0  0.0  0.0  0.0  0.0  0.5
+#      [,1] [,2] [,3] [,4] [,5] [,6]
+# [1,]  0.5  0.0  0.0  0.0  0.0  0.0
+# [2,]  0.0  0.5  0.0  0.0  0.0  0.0
+# [3,]  0.0  0.0  0.5  0.0  0.0  0.0
+# [4,]  0.0  0.0  0.0  0.5  0.0  0.0
+# [5,]  0.0  0.0  0.0  0.0  0.5  0.0
+# [6,]  0.0  0.0  0.0  0.0  0.0  0.5
+
 Final Notes
 Efficient caching: The function avoids recomputation.
 Utilizes lexical scoping: Uses <<- to modify variables outside the local function scope.
